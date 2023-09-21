@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+@media all and (max-width:1500px){
+	.sub_content {padding:0 40px;}
+	.ins_search{width:calc(100% - 100px);}
+}
+
+@media all and (max-width:1280px){
+	.sub_content {width:1200px; padding:0 20px;}
+	#footer .inr{width:1200px; margin: 0 auto; padding:30px 20px;}
+	#section0 .logo {left:550px; margin-left:-70px;}
+	#mainContainer .intro,
+	#mainContainer .product,
+	#mainContainer #footer {width:1200px; padding:40px 20px;}
+	.main_slider {padding-left:25px;}
+	.main_slider .slide_cont{margin-right:25px;}
+}

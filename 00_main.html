@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Datastation | 00_main</title>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="./css/fullpage.css">
+    <link rel="stylesheet" type="text/css" href="./css/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/slick.css">
+    <link rel="stylesheet" type="text/css" href="./css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" type="text/css" href="./css/defalt.css">
+    <link rel="stylesheet" type="text/css" href="./css/responsive.css">
+    <!-- JS -->
+    <script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="./js/fullpage.js"></script>
+    <script type="text/javascript" src="./js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./js/slick.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.mCustomScrollbar.js"></script>
+    <script type="text/javascript" src="./js/common.js"></script>
+</head>
+<body>
+<div id="wrap">
+	<!-- header -->
+	<div id="header"> <!-- 로그인 전 -->
+    <a href="#" class="btn_category"><span>카테고리</span></a>
+		<ul class="info_user">
+      <li class="login"><a href="#" data-pop="popupLogin" class="js-open">로그인</a></li>
+      <li class="wish"><a href="#">내찜목록</a></li>
+    </ul>
+	</div>
+	<!-- //header -->
+  <!-- categoryMenu -->
+  <div id="categoryMenu">
+      <p class="txt_tit">
+        카테고리<span class="txt_sub">Category</span>
+        <span class="btn_close"><span class="hide">닫기</span></span>
+      </p>
+      <ul class="depth1">
+        <li class="active">
+          <a href="javascript:void(0);">기상</a>
+          <ul class="depth2">
+            <li>
+              <input type="radio" name="weather" id="wSynoptic" data-tab="cSynoptic">
+              <label for="wSynoptic"><span>종관 기상관측</span></label>
+            </li>
+            <li>
+              <input type="radio" name="weather" id="wAgricultural" data-tab="cAgricultural">
+              <label for="wAgricultural"><span>농업 기상관측</span></label>
+            </li>
+          </ul>
+          <!-- depth3 : 종관 기상관측 -->
+          <div class="depth3" id="cSynoptic">
+            <ul>
+              <li>
+                <input type="checkbox" name="" id="no1">
+                <label for="no1"><span>평균 현지기압(hPa)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no2">
+                <label for="no2"><span>평균 해면기압(hPa)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no3">
+                <label for="no3"><span>평균 증기압(hPa)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no4">
+                <label for="no4"><span>평균 상대습도(%)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no5">
+                <label for="no5"><span>평균 기온(C)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no6">
+                <label for="no6"><span>평균 이슬점온도(C)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no7">
+                <label for="no7"><span>평균 이슬점온도(C)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no8">
+                <label for="no8"><span>평균 이슬점온도(C)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no9">
+                <label for="no9"><span>평균 이슬점온도(C)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no10">
+                <label for="no10"><span>평균 이슬점온도(C)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no11">
+                <label for="no11"><span>평균 이슬점온도(C)</span></label>
+              </li>
+            </ul>
+            <button type="button" class="btn_search"><span class="num">3개</span> 의 선택항목으로 검색시작</button>
+          </div>
+          <!-- depth3 : 농업 기상관측 -->
+          <div class="depth3" id="cAgricultural">
+            <ul>
+              <li>
+                <input type="checkbox" name="" id="no12">
+                <label for="no12"><span>평균 현지기압(hPa)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no13">
+                <label for="no13"><span>평균 해면기압(hPa)</span></label>
+              </li>
+            </ul>
+            <button type="button" class="btn_search"><span class="num">3개</span> 의 선택항목으로 검색시작</button>
+          </div>
+        </li>
+        <li class="active"><a href="#">뉴스</a></li>
+        <!-- 200130 : depth2 추가 Start -->
+        <li class="active">
+          <a href="javascript:void(0);">캘린더</a>
+          <ul class="depth2 vertical"><!-- 세로로 내려오는 형태의 depth2 사용 시, depth2 뒤에 vertical class를 붙여주세요 -->
+            <li><a href="#">최근 1년</a></li>
+            <li><a href="#">최근 3년</a></li>
+            <li><a href="#">최근 5년</a></li>
+          </ul>
+        </li>
+        <!-- 200130 : depth2 추가 End -->
+        <li><a href="#">부동산</a></li>
+        <li><a href="#">경기지수</a></li>
+        <li><a href="#">물가</a></li>
+        <li><a href="#">식품</a></li>
+        <li><a href="#">기타</a></li>
+      </ul>
+  </div>
+  <!-- //categoryMenu -->
+	<!-- sideMenu -->
+	<div id="sideMenu">
+    <ul>
+      <li class="active"><a href="./01_weather.html">기상</a></li>
+      <li class="active"><a href="#">뉴스</a></li>
+      <li class="active"><a href="#">캘린더</a></li>
+      <li><a href="#">부동산</a></li>
+      <li><a href="#">경기지수</a></li>
+      <li><a href="#">물가</a></li>
+      <li><a href="#">식품</a></li>
+      <li><a href="#">기타</a></li>
+    </ul>
+	</div>
+  <!-- //sideMenu -->
+  <!-- container -->
+  <div id="mainContainer">
+    <div id="fullpage">
+      <div class="section" id="section0">
+        <div class="logo"><a href="#"><span class="hide">데이터스테이션</span></a></div>
+        <div class="intro">
+          <div class="inr">
+              <h2><span class="txt_thin">무엇을</span> 찾고 계신가요?</h2>
+              <p>
+                최신 상품의 키워드와 주요 인기 상품을 손쉽게 찾을 수 있습니다.<br>
+                지금바로 키워드를 검색해 보세요.
+              </p>
+              <input type="search" name="" placeholder="궁금한 키워드를 검색하세요." class="ins_search" />
+          </div>
+        </div>
+      </div>
+      <div class="section" id="section1">
+        <div class="product">
+          <div class="lst_tab">
+            <ul>
+              <li class="on"><a href="#" id="popularPro">인기상품</a></li>
+              <li><a href="#" id="newPro">최신상품</a></li>
+            </ul>
+          </div>
+          <!-- tab: 인기상품 -->
+          <div class="tab_contents active" id="popularCont">
+            <section class="main_slider popular slider">
+              <div class="slide_cont">
+                <a href="#">
+                  <div class="tit">
+                    <p>1. 의료용품 및 기타 의약관련 제품 제조업 주식 중위값 의료용품 및 기타 의약관련 제품 제조업 주식 중위값</p>
+                    <span class="btn_more">더 보기</span>
+                  </div>
+                  <div class="cont">시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다. 시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다.</div>
+                </a>
+              </div>
+              <div class="slide_cont">
+                <a href="#">
+                  <div class="tit">
+                    <p>2. 컴퓨터 프로그래밍 / 시스템 통합 및 관리업 주식 중위값</p>
+                    <span class="btn_more">더 보기</span>
+                  </div>
+                  <div class="cont">시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다. 시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다.</div>
+                </a>
+              </div>
+              <div class="slide_cont">
+                <a href="#">
+                  <div class="tit">
+                    <p>3. 콜 금리 (1일 중개회사 거래) 확인 중위값</p>
+                    <span class="btn_more">더 보기</span>
+                  </div>
+                  <div class="cont">시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다. 시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다.</div>
+                </a>
+              </div>
+              <div class="slide_cont">
+                <a href="#">
+                  <div class="tit">
+                    <p>4. 의료용품 및 기타 의약관련 제품 제조업 주식 중위값 의료용품 및 기타 의약관련 제품 제조업 주식 중위값</p>
+                    <span class="btn_more">더 보기</span>
+                  </div>
+                  <div class="cont">시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다. 시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다.</div>
+                </a>
+              </div>
+              <div class="slide_cont">
+                <a href="#">
+                  <div class="tit">
+                    <p>5. 컴퓨터 프로그래밍 / 시스템 통합 및 관리업 주식 중위값</p>
+                    <span class="btn_more">더 보기</span>
+                  </div>
+                  <div class="cont">시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다. 시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다.</div>
+                </a>
+              </div>
+            </section>
+            <div class="allConts">
+              <a href="#" class="btn_all"><span>Datastation 인기상품 전체보기</span></a>
+            </div>
+          </div>
+          <!-- //tab: 인기상품 -->
+          <!-- tab: 최신상품 -->
+          <div class="tab_contents" id="newCont">
+            <section class="main_slider new slider">
+              <div class="slide_cont">
+                <a href="#">
+                  <div class="tit">
+                    <p>1. 의료용품 및 기타 의약관련 제품 제조업 주식 중위값 의료용품 및 기타 의약관련 제품 제조업 주식 중위값</p>
+                    <span class="btn_more">더 보기</span>
+                  </div>
+                  <div class="cont">시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다. 시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다.</div>
+                </a>
+              </div>
+              <div class="slide_cont">
+                <a href="#">
+                  <div class="tit">
+                    <p>2. 컴퓨터 프로그래밍 / 시스템 통합 및 관리업 주식 중위값</p>
+                    <span class="btn_more">더 보기</span>
+                  </div>
+                  <div class="cont">시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다. 시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다.</div>
+                </a>
+              </div>
+            </section>
+            <div class="allConts">
+              <a href="#" class="btn_all"><span>Datastation 인기상품 전체보기</span></a>
+            </div>
+          </div>
+          <!-- //tab: 최신상품 -->
+        </div>
+      </div>
+      <div class="section fp-auto-height" id="section3">
+        <!-- footer -->
+        <div id="footer">
+          <div class="clear">
+            <div class="logo"><a href="#"><span class="hide">데이터스테이션</span></a></div>
+            <div class="fr">
+              <ul class="info">
+                <li><a href="#">사이트맵</a></li>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">개인정보취급방침</a></li>
+                <li><a href="#">표준내부정보관리규정</a></li>
+              </ul>
+              <p class="copyright">2019 DATASTATION. All Right Reserved.</p>
+              <ul class="sns">
+                <li><a href="#" class="facebook"><span class="hide">페이스북</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- //footer -->
+      </div>
+    </div>
+  </div>
+  <!-- //container -->
+</div>
+<!-- //wrap -->
+<!-- 로그인 -->
+<div id="popupLogin" class="popType1 hidden">
+  <div class="pop_head">
+    <span class="tit">로그인</span>
+    <span class="js-close"><span class="hide">닫기</span></span>
+  </div>
+  <div class="pop_body">
+    <p class="txt_notice">로그인을 하여 다양한 데이터 상품을 쉽게 다운받아 보세요.</p>
+    <div class="form_wrap">
+      <input type="text" name="" class="ins_form" placeholder="아이디를 입력하세요.">
+      <input type="password" name="" class="ins_form" placeholder="비밀번호를 입력하세요.">
+      <div class="chk_form">
+        <input type="checkbox" name="loginSave" id="loginSave">
+        <label for="loginSave">로그인 유지</label>
+      </div>
+      <div class="btn_wrap">
+        <a href="#" class="btn_popup purple">로그인하기</a>
+        <a href="#" class="btn_popup js-open" data-pop="popupNomembers">비회원으로 계속하기</a>
+      </div>
+    </div>
+    <div class="lst_join">
+      <a href="#" class="js-open" data-pop="popupFind">비밀번호 찾기</a>
+      <a href="#" class="js-open" data-pop="popupJoin">가입하기</a>
+    </div>
+  </div>
+</div>
+<!-- 로그인 -->
+<!-- 비회원으로 계속하기 -->
+<div id="popupNomembers" class="popType1 hidden">
+  <div class="pop_head">
+    <span class="tit">비회원으로 계속하기</span>
+    <span class="js-close"><span class="hide">닫기</span></span>
+  </div>
+  <div class="pop_body">
+    <p class="txt_notice">이메일을 입력하면 데이터 파일을 메일로 보내드립니다.</p>
+    <div class="form_wrap">
+      <input type="text" name="" class="ins_form" placeholder="이메일을 입력하세요.">
+      <div class="btn_wrap pd-t60">
+        <a href="#" class="btn_popup purple">이메일로 보내기</a>
+        <a href="#" class="btn_popup js-open" data-pop="popupJoin">가입하기</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- //비회원으로 계속하기 -->
+<!-- 비밀번호 찾기 -->
+<div id="popupFind" class="popType1 hidden">
+  <div class="pop_head">
+    <span class="tit">비밀번호 찾기</span>
+    <span class="js-close"><span class="hide">닫기</span></span>
+  </div>
+  <div class="pop_body">
+    <p class="txt_notice">새로운 비밀번호를 이메일로 보내드립니다.</p>
+    <div class="form_wrap">
+      <input type="text" name="" class="ins_form" placeholder="이메일을 입력하세요.">
+      <div class="btn_wrap pd-t60">
+        <a href="#" class="btn_popup purple">확인</a>
+        <a href="#" class="btn_popup js-open" data-pop="popupJoin">가입하기</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- //비회원으로 계속하기 -->
+<!-- 가입하기 -->
+<div id="popupJoin" class="popType1 hidden">
+  <div class="pop_head">
+    <span class="tit">가입하기</span>
+    <span class="js-close"><span class="hide">닫기</span></span>
+  </div>
+  <div class="pop_body">
+    <p class="txt_notice">가입을 하여 다양한 데이터 상품을 쉽게 다운받아 보세요.</p>
+    <div class="form_wrap">
+      <input type="text" name="" class="ins_form" placeholder="이름을 입력하세요.">
+      <input type="text" name="" class="ins_form" placeholder="이메일을 입력하세요.">
+      <input type="password" name="" class="ins_form" placeholder="비밀번호를 입력하세요.">
+      <input type="password" name="" class="ins_form" placeholder="비밀번호를 한번 더 입력하세요.">
+      <div class="chk_form agree">
+        <input type="checkbox" name="agree" id="agree">
+        <label for="agree"><a href="#">이용약관</a> 및 <a href="#">개인정보 취급방침</a> 에 동의합니다.</label>
+      </div>
+      <div class="btn_wrap">
+        <a href="#" class="btn_popup purple">확인</a>
+        <a href="#" class="btn_popup js-open" data-pop="popupNomembers">비회원으로 계속하기</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- //가입하기 -->
+<div class="dimm transparent"></div>
+<!-- 메인영역 Full page Scroll 처리 -->
+<script type="text/javascript">
+  
+  $(document).ready(function(){
+    $('#fullpage').fullpage({
+        licenseKey :  '23A35FB6-E2DA4218-8D33335A-8DCF44A2', 
+        verticalCentered: true,
+        sectionsColor: ['#fff', '#fff', '#1c1c1c'],
+      }); 
+  });
+</script>
+</body>
+</html>

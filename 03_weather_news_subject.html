@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Datastation | 뉴스_주제어 분석 결과</title>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="./css/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/slick.css">
+    <link rel="stylesheet" type="text/css" href="./css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" type="text/css" href="./css/defalt.css">
+    <link rel="stylesheet" type="text/css" href="./css/responsive.css">
+    <!-- JS -->
+    <script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./js/slick.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.mCustomScrollbar.js"></script>
+    <script type="text/javascript" src="./js/common.js"></script>
+</head>
+<body>
+<div id="wrap">
+	<!-- header -->
+	<div id="header">
+    <a href="#" class="btn_category"><span>카테고리</span></a>
+		<!-- 로그인 전
+    <ul class="info_user">
+			<li class="login"><a href="#" data-pop="popupLogin" class="js-open">로그인</a></li>
+			<li class="wish"><a href="#">내찜목록</a></li>
+		</ul> -->
+    <!-- 로그인 후 -->
+    <ul class="info_user">
+      <li class="login">
+        <a href="#"><span id="userId" class="js_open2">Sangmi 79</span> 님</a>
+        <ul class="lst_user">
+          <li><a href="#">다운로드 내역</a></li>
+          <li><a href="#">내 프로필 관리</a></li>
+          <li><a href="#">로그아웃</a></li>
+        </ul>
+      </li>
+      <li class="wish">
+        <a href="#" id="userWish">내 찜 목록</a>
+        <div class="popType2 wish">
+          <div class="pop_head">
+            <p>내 찜 목록<span class="total">[ 총 <span class="num">5</span> 개 ]</span></p>
+            <span class="btn_close"><span class="hide">닫기</span></span>
+          </div>
+          <div class="pop_body">
+            <ul class="lst_wish">
+              <li>
+                <p class="tit">내가 찜한 글의 제목 영역입니다 01 내가 찜한 글의 제목 영역입니다 01</p>
+                <p class="cont">
+                  첫번째 찜한 글의 내용이 입력됩니다. 첫번째 찜한 글의 내용이 입력됩니다. 첫번째 찜한 글의 내용이 입력됩니다. 첫번째 찜한 글의 내용이 입력됩니다.
+                </p>
+                <span class="btn_del"><span class="hide">삭제</span></span>
+              </li>
+              <li>
+                <p class="tit">내가 찜한 글의 제목 영역입니다 01 내가 찜한 글의 제목 영역입니다 01</p>
+                <p class="cont">
+                  첫번째 찜한 글의 내용이 입력됩니다. 첫번째 찜한 글의 내용이 입력됩니다. 첫번째 찜한 글의 내용이 입력됩니다. 첫번째 찜한 글의 내용이 입력됩니다.
+                </p>
+                <span class="btn_del"><span class="hide">삭제</span></span>
+              </li>
+              <li>
+                <p class="tit">내가 찜한 글의 제목 영역입니다 01 내가 찜한 글의 제목 영역입니다 01</p>
+                <p class="cont">
+                  첫번째 찜한 글의 내용이 입력됩니다. 첫번째 찜한 글의 내용이 입력됩니다. 첫번째 찜한 글의 내용이 입력됩니다. 첫번째 찜한 글의 내용이 입력됩니다.
+                </p>
+                <span class="btn_del"><span class="hide">삭제</span></span>
+              </li>
+              <li>
+                <p class="tit">내가 찜한 글의 제목 영역입니다 01 내가 찜한 글의 제목 영역입니다 01</p>
+                <p class="cont">
+                  첫번째 찜한 글의 내용이 입력됩니다. 첫번째 찜한 글의 내용이 입력됩니다. 첫번째 찜한 글의 내용이 입력됩니다. 첫번째 찜한 글의 내용이 입력됩니다.
+                </p>
+                <span class="btn_del"><span class="hide">삭제</span></span>
+              </li>
+              <li>
+                <p class="tit">내가 찜한 글의 제목 영역입니다 01 내가 찜한 글의 제목 영역입니다 01</p>
+                <p class="cont">
+                  첫번째 찜한 글의 내용이 입력됩니다. 첫번째 찜한 글의 내용이 입력됩니다. 첫번째 찜한 글의 내용이 입력됩니다. 첫번째 찜한 글의 내용이 입력됩니다.
+                </p>
+                <span class="btn_del"><span class="hide">삭제</span></span>
+              </li>
+            </ul>
+          </div>
+          <div class="pop_foot">
+            <button type="button" class="btn_download"><span>다운로드</span></button>
+          </div>
+        </div>
+      </li>
+    </ul>
+	</div>
+	<!-- //header -->
+  <!-- categoryMenu -->
+  <div id="categoryMenu">
+      <p class="txt_tit">
+        카테고리<span class="txt_sub">Category</span>
+        <span class="btn_close"><span class="hide">닫기</span></span>
+      </p>
+      <ul class="depth1">
+        <li class="active">
+          <a href="javascript:void(0);">기상</a>
+          <ul class="depth2">
+            <li>
+              <input type="radio" name="weather" id="wSynoptic" data-tab="cSynoptic">
+              <label for="wSynoptic"><span>종관 기상관측</span></label>
+            </li>
+            <li>
+              <input type="radio" name="weather" id="wAgricultural" data-tab="cAgricultural">
+              <label for="wAgricultural"><span>농업 기상관측</span></label>
+            </li>
+          </ul>
+          <!-- depth3 : 종관 기상관측 -->
+          <div class="depth3" id="cSynoptic">
+            <ul>
+              <li>
+                <input type="checkbox" name="" id="no1">
+                <label for="no1"><span>평균 현지기압(hPa)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no2">
+                <label for="no2"><span>평균 해면기압(hPa)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no3">
+                <label for="no3"><span>평균 증기압(hPa)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no4">
+                <label for="no4"><span>평균 상대습도(%)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no5">
+                <label for="no5"><span>평균 기온(C)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no6">
+                <label for="no6"><span>평균 이슬점온도(C)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no7">
+                <label for="no7"><span>평균 이슬점온도(C)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no8">
+                <label for="no8"><span>평균 이슬점온도(C)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no9">
+                <label for="no9"><span>평균 이슬점온도(C)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no10">
+                <label for="no10"><span>평균 이슬점온도(C)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no11">
+                <label for="no11"><span>평균 이슬점온도(C)</span></label>
+              </li>
+            </ul>
+            <button type="button" class="btn_search"><span class="num">3개</span> 의 선택항목으로 검색시작</button>
+          </div>
+          <!-- depth3 : 농업 기상관측 -->
+          <div class="depth3" id="cAgricultural">
+            <ul>
+              <li>
+                <input type="checkbox" name="" id="no12">
+                <label for="no12"><span>평균 현지기압(hPa)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no13">
+                <label for="no13"><span>평균 해면기압(hPa)</span></label>
+              </li>
+            </ul>
+            <button type="button" class="btn_search"><span class="num">3개</span> 의 선택항목으로 검색시작</button>
+          </div>
+        </li>
+        <li class="active"><a href="#">뉴스</a></li>
+        <li class="active"><a href="#">캘린더</a></li>
+        <li><a href="#">부동산</a></li>
+        <li><a href="#">경기지수</a></li>
+        <li><a href="#">물가</a></li>
+        <li><a href="#">식품</a></li>
+        <li><a href="#">기타</a></li>
+      </ul>
+  </div>
+  <!-- //categoryMenu -->
+	<!-- sideMenu -->
+	<div id="sideMenu">
+    <ul>
+      <li class="active"><a href="#" class="on">기상</a></li>
+      <li class="active"><a href="#">뉴스</a></li>
+      <li class="active"><a href="#">캘린더</a></li>
+      <li><a href="#">부동산</a></li>
+      <li><a href="#">경기지수</a></li>
+      <li><a href="#">물가</a></li>
+      <li><a href="#">식품</a></li>
+      <li><a href="#">기타</a></li>
+    </ul>
+	</div>
+  <!-- //sideMenu -->
+  <!-- container -->
+  <div id="container" class="sub">
+    <!-- 서브 컨텐츠 -->
+    <div class="sub_content">
+      <!-- 검색 영역 -->
+      <div class="search_area">
+        <div class="logo"><a href="./00_main.html"><span class="hide">데이터스테이션</span></a></div>
+        <input type="search" name="" placeholder="궁금한 키워드를 검색하세요." class="ins_search" />
+      </div>
+      <!-- //검색 영역 -->
+      <!-- 탭 컨텐츠 -->
+      <div id="subTab" class="lst_tab">
+        <ul>
+          <li><a href="#" data-tab="tabData">데이터</a></li>
+          <li class="on"><a href="#" data-tab="tabNews">뉴스</a></li>
+        </ul>
+      </div>
+      <!-- tab1: Data -->
+      <div id="tabData" class="tab_contents">
+      </div>
+      <!-- tab2: News -->
+      <div id="tabNews" class="tab_contents active">
+        <div class="naviWrap">
+          <ul class="navigation">
+            <li><a href="#" class="keyword">'기상'</a> 에 대한 검색결과</li>
+            <li><a href="#" class="keyword">주제어 분석 결과</a></li>
+          </ul>
+          <div class="fr">
+            <button type="button" class="btn_resultDown">
+              <span><span class="color_purple">전체 일자별 주제어 TOP10</span> 다운로드</span>
+            </button>
+            <button type="button" class="btn_resultDown">
+              <span><span class="color_purple">주제어 분석결과</span> 다운로드</span>
+            </button>
+          </div>
+        </div>
+        <div class="row_group">
+          <div class="row">
+            <div class="row_tit">
+              <p><span class="tit">주제어 분석 결과</span>
+                검색어를 포함하는 전체 뉴스기사에서 일자별로 중요한 주제어의 목록을 상위 100개까지 제공하는 분석결과 입니다.</p>
+            </div>
+            <div class="row_cont subject">
+              <div class="area_select">
+                <span class="tit">분석기간</span>
+                <input type="text" name="startDate" class="ins_form w140" id="startDate">
+                <span class="txt_to"> ~ </span>
+                <input type="text" name="endDate" class="ins_form w140" id="endDate">
+              </div>
+              <div class="area_ranking">
+                <section class="ranking_slider">
+                  <!-- 1~ 25위 -->
+                  <div class="ranking_cont">
+                    <div class="tblType3">
+                      <table summary="">
+                        <caption></caption>
+                        <colgroup>
+                          <col width="10%" />
+                          <col width="60%" />
+                          <col width="30%" />
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th><i>1</i></th>
+                            <td><span class="txt_subject">비 번개동반</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>2</i></th>
+                            <td><span class="txt_subject">아침 고기압 영향</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>3</i></th>
+                            <td><span class="txt_subject">전국 번개동반</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>4</i></th>
+                            <td><span class="txt_subject">전국 항해조업</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>5</i></th>
+                            <td><span class="txt_subject">비 저기압 영향</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>6</i></th>
+                            <td><span class="txt_subject">태풍 헥토파스칼</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>7</i></th>
+                            <td><span class="txt_subject">태풍 강풍동반</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>8</i></th>
+                            <td><span class="txt_subject">태풍 중심기압헥토파스칼</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>9</i></th>
+                            <td><span class="txt_subject">태풍 기압헥토파스칼</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>10</i></th>
+                            <td><span class="txt_subject">태풍 최대풍속</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>11</i></th>
+                            <td><span class="txt_subject">태풍 부근해상</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>12</i></th>
+                            <td><span class="txt_subject">태풍 풍속초속</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>13</i></th>
+                            <td><span class="txt_subject">태풍 최대풍속초속</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>14</i></th>
+                            <td><span class="txt_subject">태풍 해상북상</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>15</i></th>
+                            <td><span class="txt_subject">태풍 세력유지</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>16</i></th>
+                            <td><span class="txt_subject">주의보 이상지속</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>17</i></th>
+                            <td><span class="txt_subject">전국 천둥번개동반</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>18</i></th>
+                            <td><span class="txt_subject">전국 돌풍천둥번개동반</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>19</i></th>
+                            <td><span class="txt_subject">오늘 고기압영향</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>20</i></th>
+                            <td><span class="txt_subject">전국 고기압 영향</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>21</i></th>
+                            <td><span class="txt_subject">전국 저기압 영향</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>22</i></th>
+                            <td><span class="txt_subject">낮 고기압 영향</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>23</i></th>
+                            <td><span class="txt_subject">기온 고기압 영향</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>24</i></th>
+                            <td><span class="txt_subject">전국 평년비슷</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>25</i></th>
+                            <td><span class="txt_subject">전국 서울경기</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <!-- //1~ 25위 -->
+                  <!-- 25 ~ 50위 -->
+                  <div class="ranking_cont">
+                    <div class="tblType3">
+                      <table summary="">
+                        <caption></caption>
+                        <colgroup>
+                          <col width="10%" />
+                          <col width="60%" />
+                          <col width="30%" />
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th><i>26</i></th>
+                            <td><span class="txt_subject">전국 춘천영</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>27</i></th>
+                            <td><span class="txt_subject">서울 고기압</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>28</i></th>
+                            <td><span class="txt_subject">태풍 동쪽부</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>29</i></th>
+                            <td><span class="txt_subject">전국 울릉도</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>30</i></th>
+                            <td><span class="txt_subject">전국 기압골</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>31</i></th>
+                            <td><span class="txt_subject">비 기압골영</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>32</i></th>
+                            <td><span class="txt_subject">전국 어제비</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>33</i></th>
+                            <td><span class="txt_subject">전국 강원영</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>34</i></th>
+                            <td><span class="txt_subject">비 서울경기</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>35</i></th>
+                            <td><span class="txt_subject">소나기 천둥</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>36</i></th>
+                            <td><span class="txt_subject">일교차 고기</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>37</i></th>
+                            <td><span class="txt_subject">비 고기압영</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>38</i></th>
+                            <td><span class="txt_subject">미세먼지 고</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>39</i></th>
+                            <td><span class="txt_subject">미세먼지 기</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>40</i></th>
+                            <td><span class="txt_subject">전국 보통수</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>41</i></th>
+                            <td><span class="txt_subject">주의보 이틀</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>42</i></th>
+                            <td><span class="txt_subject">전국 강원영</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>43</i></th>
+                            <td><span class="txt_subject">비 천둥번개</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>44</i></th>
+                            <td><span class="txt_subject">영하 고기압</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>45</i></th>
+                            <td><span class="txt_subject">미세 보통수</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>46</i></th>
+                            <td><span class="txt_subject">날씨 고기압</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>47</i></th>
+                            <td><span class="txt_subject">날씨 보통수</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>48</i></th>
+                            <td><span class="txt_subject">날씨 고기압</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>49</i></th>
+                            <td><span class="txt_subject">먼지 보통수</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>50</i></th>
+                            <td><span class="txt_subject">날씨 항해조</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <!-- //25 ~ 50위 -->
+                  <!-- 50 ~ 75위 -->
+                  <div class="ranking_cont">
+                    <div class="tblType3">
+                      <table summary="">
+                        <caption></caption>
+                        <colgroup>
+                          <col width="10%" />
+                          <col width="60%" />
+                          <col width="30%" />
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th><i>51</i></th>
+                            <td><span class="txt_subject">전국 춘천영</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>52</i></th>
+                            <td><span class="txt_subject">서울 고기압</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>53</i></th>
+                            <td><span class="txt_subject">태풍 동쪽부</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>54</i></th>
+                            <td><span class="txt_subject">전국 울릉도</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>55</i></th>
+                            <td><span class="txt_subject">전국 기압골</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>56</i></th>
+                            <td><span class="txt_subject">비 기압골영</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>57</i></th>
+                            <td><span class="txt_subject">전국 어제비</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>58</i></th>
+                            <td><span class="txt_subject">전국 강원영</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>59</i></th>
+                            <td><span class="txt_subject">비 서울경기</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>60</i></th>
+                            <td><span class="txt_subject">소나기 천둥</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>61</i></th>
+                            <td><span class="txt_subject">일교차 고기</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>62</i></th>
+                            <td><span class="txt_subject">비 고기압영</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>63</i></th>
+                            <td><span class="txt_subject">미세먼지 고</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>64</i></th>
+                            <td><span class="txt_subject">미세먼지 기</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>65</i></th>
+                            <td><span class="txt_subject">전국 보통수</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>66</i></th>
+                            <td><span class="txt_subject">주의보 이틀</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>67</i></th>
+                            <td><span class="txt_subject">전국 강원영</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>68</i></th>
+                            <td><span class="txt_subject">비 천둥번개</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>69</i></th>
+                            <td><span class="txt_subject">영하 고기압</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>70</i></th>
+                            <td><span class="txt_subject">미세 보통수</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>71</i></th>
+                            <td><span class="txt_subject">날씨 고기압</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>72</i></th>
+                            <td><span class="txt_subject">날씨 보통수</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>73</i></th>
+                            <td><span class="txt_subject">날씨 고기압</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>74</i></th>
+                            <td><span class="txt_subject">먼지 보통수</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>75</i></th>
+                            <td><span class="txt_subject">날씨 항해조</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <!-- //50 ~ 75위 -->
+                  <!-- 75 ~ 100위 -->
+                  <div class="ranking_cont">
+                    <div class="tblType3">
+                      <table summary="">
+                        <caption></caption>
+                        <colgroup>
+                          <col width="10%" />
+                          <col width="60%" />
+                          <col width="30%" />
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th><i>76</i></th>
+                            <td><span class="txt_subject">비 번개동반</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>77</i></th>
+                            <td><span class="txt_subject">아침 고기압 영향</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>78</i></th>
+                            <td><span class="txt_subject">전국 번개동반</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>79</i></th>
+                            <td><span class="txt_subject">전국 항해조업</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>80</i></th>
+                            <td><span class="txt_subject">비 저기압 영향</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>81</i></th>
+                            <td><span class="txt_subject">태풍 헥토파스칼</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>82</i></th>
+                            <td><span class="txt_subject">태풍 강풍동반</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>83</i></th>
+                            <td><span class="txt_subject">태풍 중심기압헥토파스칼</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>84</i></th>
+                            <td><span class="txt_subject">태풍 기압헥토파스칼</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>85</i></th>
+                            <td><span class="txt_subject">태풍 최대풍속</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>86</i></th>
+                            <td><span class="txt_subject">태풍 부근해상</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>87</i></th>
+                            <td><span class="txt_subject">태풍 풍속초속</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>88</i></th>
+                            <td><span class="txt_subject">태풍 최대풍속초속</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>89</i></th>
+                            <td><span class="txt_subject">태풍 해상북상</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>90</i></th>
+                            <td><span class="txt_subject">태풍 세력유지</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>91</i></th>
+                            <td><span class="txt_subject">주의보 이상지속</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>92</i></th>
+                            <td><span class="txt_subject">전국 천둥번개동반</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>93</i></th>
+                            <td><span class="txt_subject">전국 돌풍천둥번개동반</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>94</i></th>
+                            <td><span class="txt_subject">오늘 고기압영향</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>95</i></th>
+                            <td><span class="txt_subject">전국 고기압 영향</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>96</i></th>
+                            <td><span class="txt_subject">전국 저기압 영향</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>97</i></th>
+                            <td><span class="txt_subject">낮 고기압 영향</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>98</i></th>
+                            <td><span class="txt_subject">기온 고기압 영향</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>99</i></th>
+                            <td><span class="txt_subject">전국 평년비슷</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                          <tr>
+                            <th><i>100</i></th>
+                            <td><span class="txt_subject">전국 서울경기</span></td>
+                            <td class="ta-r"><span>2019.05.05</span></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <!-- //75 ~ 100위 -->
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //탭 컨텐츠 -->
+    </div>
+    <!-- //서브 컨텐츠 -->
+  </div>
+  <!-- //container -->
+  <!-- footer -->
+  <div id="footer">
+    <div class="inr clear">
+      <div class="logo"><a href="#"><span class="hide">데이터스테이션</span></a></div>
+      <div class="fr">
+        <ul class="info">
+          <li><a href="#">사이트맵</a></li>
+          <li><a href="#">이용약관</a></li>
+          <li><a href="#">개인정보취급방침</a></li>
+          <li><a href="#">표준내부정보관리규정</a></li>
+        </ul>
+        <p class="copyright">2019 DATASTATION. All Right Reserved.</p>
+        <ul class="sns">
+          <li><a href="#" class="facebook"><span class="hide">페이스북</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- //footer -->
+  <ul id="sidebar">
+    <li><span class="btn_data js-open" data-pop="popupData"><span class="hidden">데이터 상품요청</span></span>
+    </li>
+    <li><span class="btn_top"><span class="hide">상단으로 가기</span></span>
+    </li>
+  </ul>
+</div>
+<!-- //wrap -->
+<!-- 로그인 -->
+<div id="popupLogin" class="popType1 hidden">
+  <div class="pop_head">
+    <span class="tit">로그인</span>
+    <span class="js-close"><span class="hide">닫기</span></span>
+  </div>
+  <div class="pop_body">
+    <p class="txt_notice">로그인을 하여 다양한 데이터 상품을 쉽게 다운받아 보세요.</p>
+    <div class="form_wrap">
+      <input type="text" name="" class="ins_form" placeholder="아이디를 입력하세요.">
+      <input type="password" name="" class="ins_form" placeholder="비밀번호를 입력하세요.">
+      <div class="chk_form">
+        <input type="checkbox" name="loginSave" id="loginSave">
+        <label for="loginSave">로그인 유지</label>
+      </div>
+      <div class="btn_wrap">
+        <a href="#" class="btn_popup purple">로그인하기</a>
+        <a href="#" class="btn_popup js-open" data-pop="popupNomembers">비회원으로 계속하기</a>
+      </div>
+    </div>
+    <div class="lst_join">
+      <a href="#" class="js-open" data-pop="popupFind">비밀번호 찾기</a>
+      <a href="#" class="js-open" data-pop="popupJoin">가입하기</a>
+    </div>
+  </div>
+</div>
+<!-- 로그인 -->
+<!-- 비회원으로 계속하기 -->
+<div id="popupNomembers" class="popType1 hidden">
+  <div class="pop_head">
+    <span class="tit">비회원으로 계속하기</span>
+    <span class="js-close"><span class="hide">닫기</span></span>
+  </div>
+  <div class="pop_body">
+    <p class="txt_notice">이메일을 입력하면 데이터 파일을 메일로 보내드립니다.</p>
+    <div class="form_wrap">
+      <input type="text" name="" class="ins_form" placeholder="이메일을 입력하세요.">
+      <div class="btn_wrap pd-t60">
+        <a href="#" class="btn_popup purple">이메일로 보내기</a>
+        <a href="#" class="btn_popup js-open" data-pop="popupJoin">가입하기</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- //비회원으로 계속하기 -->
+<!-- 비밀번호 찾기 -->
+<div id="popupFind" class="popType1 hidden">
+  <div class="pop_head">
+    <span class="tit">비밀번호 찾기</span>
+    <span class="js-close"><span class="hide">닫기</span></span>
+  </div>
+  <div class="pop_body">
+    <p class="txt_notice">새로운 비밀번호를 이메일로 보내드립니다.</p>
+    <div class="form_wrap">
+      <input type="text" name="" class="ins_form" placeholder="이메일을 입력하세요.">
+      <div class="btn_wrap pd-t60">
+        <a href="#" class="btn_popup purple">확인</a>
+        <a href="#" class="btn_popup js-open" data-pop="popupJoin">가입하기</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- //비회원으로 계속하기 -->
+<!-- 가입하기 -->
+<div id="popupJoin" class="popType1 hidden">
+  <div class="pop_head">
+    <span class="tit">가입하기</span>
+    <span class="js-close"><span class="hide">닫기</span></span>
+  </div>
+  <div class="pop_body">
+    <p class="txt_notice">가입을 하여 다양한 데이터 상품을 쉽게 다운받아 보세요.</p>
+    <div class="form_wrap">
+      <input type="text" name="" class="ins_form" placeholder="이름을 입력하세요.">
+      <input type="text" name="" class="ins_form" placeholder="이메일을 입력하세요.">
+      <input type="password" name="" class="ins_form" placeholder="비밀번호를 입력하세요.">
+      <input type="password" name="" class="ins_form" placeholder="비밀번호를 한번 더 입력하세요.">
+      <div class="chk_form agree">
+        <input type="checkbox" name="agree" id="agree">
+        <label for="agree"><a href="#">이용약관</a> 및 <a href="#">개인정보 취급방침</a> 에 동의합니다.</label>
+      </div>
+      <div class="btn_wrap">
+        <a href="#" class="btn_popup purple">확인</a>
+        <a href="#" class="btn_popup js-open" data-pop="popupNomembers">비회원으로 계속하기</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- //가입하기 -->
+<!-- 데이터 상품 요청 -->
+<div id="popupData" class="popType1 data hidden">
+  <div class="pop_head">
+    <span class="tit">데이터 상품 요청</span>
+    <span class="js-close"><span class="hide">닫기</span></span>
+  </div>
+  <div class="pop_body">
+    <div class="form_wrap type2">
+      <p class="tit">희망사항 작성</p>
+      <input type="text" name="" class="ins_form" placeholder="예) 전세, 매매 및 시세 관련 자료가 있었으면 좋겠습니다!">
+      <p class="tit">희망 수집기간</p>
+      <input type="text" name="" class="ins_form" placeholder="예) 2012년 ~ 2019년 까지">
+      <p class="tit">희망 수집 주기</p>
+      <select class="ins_form">
+        <option>월별</option>
+        <option>일별</option>
+      </select>
+      <div class="btn_wrap">
+        <a href="#" class="btn_popup purple">요청하기</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- //데이터 상품 요청 -->
+<div class="dimm transparent"></div>
+</body>
+</html>

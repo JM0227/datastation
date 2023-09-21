@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Datastation | 기상</title>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="./css/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/slick.css">
+    <link rel="stylesheet" type="text/css" href="./css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" type="text/css" href="./css/defalt.css">
+    <link rel="stylesheet" type="text/css" href="./css/responsive.css">
+    <!-- JS -->
+    <script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./js/slick.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.mCustomScrollbar.js"></script>
+    <script type="text/javascript" src="./js/common.js"></script>
+</head>
+<body>
+<div id="wrap">
+	<!-- header -->
+	<div id="header">
+    <a href="#" class="btn_category"><span>카테고리</span></a>
+    <!-- 로그인 전
+		<ul class="info_user">
+			<li class="login"><a href="#">로그인</a></li>
+			<li class="wish"><a href="#">내찜목록</a></li>
+		</ul>
+  -->
+    <ul class="info_user"> <!-- 로그인 후 -->
+      <li class="login">
+        <a href="#"><span id="userId" class="js_open2">Sangmi 79</span> 님</a>
+        <ul class="lst_user">
+          <li><a href="#">다운로드 내역</a></li>
+          <li><a href="#">내 프로필 관리</a></li>
+          <li><a href="#">로그아웃</a></li>
+        </ul>
+      </li>
+      <li class="wish">
+        <a href="#" id="userWish">내 찜 목록</a>
+        <!-- 내 찜 목록 리스트 -->
+        <div class="popType2 wish">
+          <div class="pop_head">
+            <p>내 찜 목록<span class="total">[ 총 <span class="num">5</span> 개 ]</span></p>
+            <span class="btn_close"><span class="hide">닫기</span></span>
+          </div>
+          <div class="pop_body">
+            <ul class="lst_wish">
+              <li>
+                <p class="tit">내가 찜한 글의 제목 영역입니다 01 내가 찜한 글의 제목 영역입니다 01</p>
+                <p class="cont">
+                  첫번째 찜한 글의 내용이 입력됩니다. 첫번째 찜한 글의 내용이 입력됩니다. 첫번째 찜한 글의 내용이 입력됩니다. 첫번째 찜한 글의 내용이 입력됩니다.
+                </p>
+                <span class="btn_del"><span class="hide">삭제</span></span>
+              </li>
+              <li>
+                <p class="tit">내가 찜한 글의 제목 영역입니다 01 내가 찜한 글의 제목 영역입니다 01</p>
+                <p class="cont">
+                  첫번째 찜한 글의 내용이 입력됩니다. 첫번째 찜한 글의 내용이 입력됩니다. 첫번째 찜한 글의 내용이 입력됩니다. 첫번째 찜한 글의 내용이 입력됩니다.
+                </p>
+                <span class="btn_del"><span class="hide">삭제</span></span>
+              </li>
+              <li>
+                <p class="tit">내가 찜한 글의 제목 영역입니다 01 내가 찜한 글의 제목 영역입니다 01</p>
+                <p class="cont">
+                  첫번째 찜한 글의 내용이 입력됩니다. 첫번째 찜한 글의 내용이 입력됩니다. 첫번째 찜한 글의 내용이 입력됩니다. 첫번째 찜한 글의 내용이 입력됩니다.
+                </p>
+                <span class="btn_del"><span class="hide">삭제</span></span>
+              </li>
+              <li>
+                <p class="tit">내가 찜한 글의 제목 영역입니다 01 내가 찜한 글의 제목 영역입니다 01</p>
+                <p class="cont">
+                  첫번째 찜한 글의 내용이 입력됩니다. 첫번째 찜한 글의 내용이 입력됩니다. 첫번째 찜한 글의 내용이 입력됩니다. 첫번째 찜한 글의 내용이 입력됩니다.
+                </p>
+                <span class="btn_del"><span class="hide">삭제</span></span>
+              </li>
+              <li>
+                <p class="tit">내가 찜한 글의 제목 영역입니다 01 내가 찜한 글의 제목 영역입니다 01</p>
+                <p class="cont">
+                  첫번째 찜한 글의 내용이 입력됩니다. 첫번째 찜한 글의 내용이 입력됩니다. 첫번째 찜한 글의 내용이 입력됩니다. 첫번째 찜한 글의 내용이 입력됩니다.
+                </p>
+                <span class="btn_del"><span class="hide">삭제</span></span>
+              </li>
+            </ul>
+          </div>
+          <div class="pop_foot">
+            <button type="button" class="btn_download"><span>다운로드</span></button>
+          </div>
+        </div>
+        <!-- //내 찜 목록 리스트 -->
+      </li>
+    </ul>
+	</div>
+	<!-- //header -->
+  <!-- categoryMenu -->
+  <div id="categoryMenu">
+      <p class="txt_tit">
+        카테고리<span class="txt_sub">Category</span>
+        <span class="btn_close"><span class="hide">닫기</span></span>
+      </p>
+      <ul class="depth1">
+        <li class="active">
+          <a href="javascript:void(0);">기상</a>
+          <ul class="depth2">
+            <li>
+              <input type="radio" name="weather" id="wSynoptic" data-tab="cSynoptic">
+              <label for="wSynoptic"><span>종관 기상관측</span></label>
+            </li>
+            <li>
+              <input type="radio" name="weather" id="wAgricultural" data-tab="cAgricultural">
+              <label for="wAgricultural"><span>농업 기상관측</span></label>
+            </li>
+          </ul>
+          <!-- depth3 : 종관 기상관측 -->
+          <div class="depth3" id="cSynoptic">
+            <ul>
+              <li>
+                <input type="checkbox" name="" id="no1">
+                <label for="no1"><span>평균 현지기압(hPa)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no2">
+                <label for="no2"><span>평균 해면기압(hPa)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no3">
+                <label for="no3"><span>평균 증기압(hPa)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no4">
+                <label for="no4"><span>평균 상대습도(%)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no5">
+                <label for="no5"><span>평균 기온(C)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no6">
+                <label for="no6"><span>평균 이슬점온도(C)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no7">
+                <label for="no7"><span>평균 이슬점온도(C)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no8">
+                <label for="no8"><span>평균 이슬점온도(C)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no9">
+                <label for="no9"><span>평균 이슬점온도(C)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no10">
+                <label for="no10"><span>평균 이슬점온도(C)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no11">
+                <label for="no11"><span>평균 이슬점온도(C)</span></label>
+              </li>
+            </ul>
+            <button type="button" class="btn_search"><span class="num">3개</span> 의 선택항목으로 검색시작</button>
+          </div>
+          <!-- depth3 : 농업 기상관측 -->
+          <div class="depth3" id="cAgricultural">
+            <ul>
+              <li>
+                <input type="checkbox" name="" id="no12">
+                <label for="no12"><span>평균 현지기압(hPa)</span></label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="no13">
+                <label for="no13"><span>평균 해면기압(hPa)</span></label>
+              </li>
+            </ul>
+            <button type="button" class="btn_search"><span class="num">3개</span> 의 선택항목으로 검색시작</button>
+          </div>
+        </li>
+        <li class="active"><a href="#">뉴스</a></li>
+        <li class="active"><a href="#">캘린더</a></li>
+        <li><a href="#">부동산</a></li>
+        <li><a href="#">경기지수</a></li>
+        <li><a href="#">물가</a></li>
+        <li><a href="#">식품</a></li>
+        <li><a href="#">기타</a></li>
+      </ul>
+  </div>
+  <!-- //categoryMenu -->
+	<!-- sideMenu -->
+	<div id="sideMenu">
+    <ul>
+      <li class="active"><a href="#" class="on">기상</a></li>
+      <li class="active"><a href="#">뉴스</a></li>
+      <li class="active"><a href="#">캘린더</a></li>
+      <li><a href="#">부동산</a></li>
+      <li><a href="#">경기지수</a></li>
+      <li><a href="#">물가</a></li>
+      <li><a href="#">식품</a></li>
+      <li><a href="#">기타</a></li>
+    </ul>
+	</div>
+  <!-- //sideMenu -->
+  <!-- container -->
+  <div id="container" class="sub">
+    <!-- 서브 컨텐츠 -->
+    <div class="sub_content">
+      <!-- 검색 영역 -->
+      <div class="search_area">
+        <div class="logo"><a href="./00_main.html"><span class="hide">데이터스테이션</span></a></div>
+        <input type="search" name="" placeholder="궁금한 키워드를 검색하세요." class="ins_search" />
+      </div>
+      <!-- //검색 영역 -->
+      <!-- 탭 컨텐츠 -->
+      <div id="subTab" class="lst_tab">
+        <ul>
+          <li class="on"><a href="#" data-tab="tabData">데이터</a></li>
+          <li><a href="#" data-tab="tabNews">뉴스</a></li>
+        </ul>
+      </div>
+      <!-- tab1: Data -->
+      <div id="tabData" class="tab_contents active">
+        <p class="txt_result">
+          총 <span class="num">15</span> 건의 결과가 검색되었습니다.
+          <button type="button" class="btn_resultDown">
+            <span><span class="color_purple">최근 1년 데이터</span> 다운로드</span>
+          </button>
+        </p>
+        <ul class="lst_result">
+          <li>
+            <div class="top">
+              <div class="fl">
+                <a href="./02_weather_sub.html" class="txt_link">
+                  <span class="txt_tit">
+                    <span>의료용품 및 기타 의약관련 제품 제조업 주식 중위값</span>
+                  </span>
+                  <span class="cont">
+                    <span>
+                      시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다. 시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다. 시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다. 시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다. 시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다.시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다.
+                    </span>
+                  </span>
+                  <span class="btn_more">더 보기</span>
+                </a>
+              </div>
+              <div class="fr tblType1">
+                <table summary="">
+                  <caption></caption>
+                  <colgroup>
+                    <col width="40%" />
+                    <col width="60%" />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th>· 출처</th>
+                      <td><a href="https://www.kisti.re.kr/" target="_blank" title="과학기술정보원 바로가기">과학기술정보원</a></td>
+                    </tr>
+                    <tr>
+                      <th>· 수집주기</th>
+                      <td>일별</td>
+                    </tr>
+                    <tr>
+                      <th>· 수집기간</th>
+                      <td>2011.01.01 ~ 2019.10.31</td>
+                    </tr>
+                    <tr>
+                      <th>· 형식</th>
+                      <td>CSV</td>
+                    </tr>
+                    <tr>
+                      <th>· 사이즈</th>
+                      <td>1.3 GB</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="bottom">
+              <div class="keyword_wrap">
+                <table summary="">
+                  <caption></caption>
+                  <colgroup>
+                    <col width="10%" />
+                    <col width="60%" />
+                    <col width="30%" />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th>관련 키워드</th>
+                      <td>
+                        <span class="tag_key">#미세먼지</span>
+                        <span class="tag_key">#미세먼지</span>
+                      </td>
+                      <td class="ta-r">
+                        <button type="button" class="btn_wish"><span>찜하기</span></button>
+                        <button type="button" class="btn_download"><span>다운로드</span></button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="top">
+              <div class="fl">
+                <a href="./02_weather_sub.html" class="txt_link">
+                  <span class="txt_tit">
+                    <span>의료용품 및 기타 의약관련 제품 제조업 주식 중위값의료용품 및 기타 의약관련 제품 제조업 주식 중위값</span>
+                  </span>
+                  <span class="cont">
+                    <span>
+                      시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다. 시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다. 시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다. 시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다. 시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다.시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다.알릴 것이다. 시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다. 시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다. 시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다.시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다.
+                    </span>
+                  </span>
+                  <span class="btn_more">더 보기</span>
+                </a>
+              </div>
+              <div class="fr tblType1">
+                <table summary="">
+                  <caption></caption>
+                  <colgroup>
+                    <col width="30%" />
+                    <col width="70%" />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th>· 출처</th>
+                      <td><a href="https://www.kisti.re.kr/" target="_blank" title="과학기술정보원 바로가기">과학기술정보원</a></td>
+                    </tr>
+                    <tr>
+                      <th>· 수집주기</th>
+                      <td>일별</td>
+                    </tr>
+                    <tr>
+                      <th>· 수집기간</th>
+                      <td>2011.01.01 ~ 2019.10.31</td>
+                    </tr>
+                    <tr>
+                      <th>· 형식</th>
+                      <td>CSV</td>
+                    </tr>
+                    <tr>
+                      <th>· 사이즈</th>
+                      <td>1.3 GB</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="bottom">
+              <div class="keyword_wrap">
+                <table summary="">
+                  <caption></caption>
+                  <colgroup>
+                    <col width="10%" />
+                    <col width="60%" />
+                    <col width="30%" />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th>관련 키워드</th>
+                      <td>
+                        <span class="tag_key">#미세먼지</span>
+                        <span class="tag_key">#태풍</span>
+                        <span class="tag_key">#미세먼지</span>
+                        <span class="tag_key">#태풍</span>
+                        <span class="tag_key">#미세먼지</span>
+                        <span class="tag_key">#태풍</span>
+                        <span class="tag_key">#미세먼지</span>
+                        <span class="tag_key">#태풍</span>
+                        <span class="tag_key">#미세먼지</span>
+                        <span class="tag_key">#태풍</span>
+                        <span class="tag_key">#미세먼지</span>
+                        <span class="tag_key">#태풍</span>
+                        <span class="tag_key">#미세먼지</span>
+                        <span class="tag_key">#태풍</span>
+                        <span class="tag_key">#미세먼지</span>
+                        <span class="tag_key">#태풍</span>
+                        <span class="tag_key">#미세먼지</span>
+                        <span class="tag_key">#태풍</span>
+                        <span class="tag_key">#미세먼지</span>
+                      </td>
+                      <td class="ta-r">
+                        <button type="button" class="btn_wish"><span>찜하기</span></button>
+                        <button type="button" class="btn_download"><span>다운로드</span></button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="top">
+              <div class="fl">
+                <a href="./02_weather_sub.html" class="txt_link">
+                  <span class="txt_tit">
+                    <span>의료용품 및 기타 의약관련 제품 제조업 주식 중위값</span>
+                  </span>
+                  <span class="cont">
+                    <span>
+                      시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다. 시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다. 시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다. 시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다. 시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다.시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다.
+                    </span>
+                  </span>
+                  <span class="btn_more">더 보기</span>
+                </a>
+              </div>
+              <div class="fr tblType1">
+                <table summary="">
+                  <caption></caption>
+                  <colgroup>
+                    <col width="30%" />
+                    <col width="70%" />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th>· 출처</th>
+                      <td><a href="https://www.kisti.re.kr/" target="_blank" title="과학기술정보원 바로가기">과학기술정보원</a></td>
+                    </tr>
+                    <tr>
+                      <th>· 수집주기</th>
+                      <td>일별</td>
+                    </tr>
+                    <tr>
+                      <th>· 수집기간</th>
+                      <td>2011.01.01 ~ 2019.10.31</td>
+                    </tr>
+                    <tr>
+                      <th>· 형식</th>
+                      <td>CSV</td>
+                    </tr>
+                    <tr>
+                      <th>· 사이즈</th>
+                      <td>1.3 GB</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="bottom">
+              <div class="keyword_wrap">
+                <table summary="">
+                  <caption></caption>
+                  <colgroup>
+                    <col width="10%" />
+                    <col width="60%" />
+                    <col width="30%" />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th>관련 키워드</th>
+                      <td>
+                        <span class="tag_key">#미세먼지</span>
+                        <span class="tag_key">#미세먼지</span>
+                      </td>
+                      <td class="ta-r">
+                        <button type="button" class="btn_wish"><span>찜하기</span></button>
+                        <button type="button" class="btn_download"><span>다운로드</span></button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="top">
+              <div class="fl">
+                <a href="./02_weather_sub.html" class="txt_link">
+                  <span class="txt_tit">
+                    <span>의료용품 및 기타 의약관련 제품 제조업 주식 중위값</span>
+                  </span>
+                  <span class="cont">
+                    <span>
+                      시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다. 시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다. 시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다. 시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다. 시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다.시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다.
+                    </span>
+                  </span>
+                  <span class="btn_more">더 보기</span>
+                </a>
+              </div>
+              <div class="fr tblType1">
+                <table summary="">
+                  <caption></caption>
+                  <colgroup>
+                    <col width="30%" />
+                    <col width="70%" />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th>· 출처</th>
+                      <td><a href="https://www.kisti.re.kr/" target="_blank" title="과학기술정보원 바로가기">과학기술정보원</a></td>
+                    </tr>
+                    <tr>
+                      <th>· 수집주기</th>
+                      <td>일별</td>
+                    </tr>
+                    <tr>
+                      <th>· 수집기간</th>
+                      <td>2011.01.01 ~ 2019.10.31</td>
+                    </tr>
+                    <tr>
+                      <th>· 형식</th>
+                      <td>CSV</td>
+                    </tr>
+                    <tr>
+                      <th>· 사이즈</th>
+                      <td>1.3 GB</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="bottom">
+              <div class="keyword_wrap">
+                <table summary="">
+                  <caption></caption>
+                  <colgroup>
+                    <col width="10%" />
+                    <col width="60%" />
+                    <col width="30%" />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th>관련 키워드</th>
+                      <td>
+                        <span class="tag_key">#미세먼지</span>
+                        <span class="tag_key">#미세먼지</span>
+                      </td>
+                      <td class="ta-r">
+                        <button type="button" class="btn_wish"><span>찜하기</span></button>
+                        <button type="button" class="btn_download"><span>다운로드</span></button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="top">
+              <div class="fl">
+                <a href="./02_weather_sub.html" class="txt_link">
+                  <span class="txt_tit">
+                    <span>의료용품 및 기타 의약관련 제품 제조업 주식 중위값</span>
+                  </span>
+                  <span class="cont">
+                    <span>
+                      시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다. 시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다. 시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다. 시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다. 시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다.시들어 쓸쓸하고 피고, 대한 것이다. 트고, 봄바람을 실현에 곳으로 아니더면 그들은 그들의 만천하의 역사를 알릴 것이다.
+                    </span>
+                  </span>
+                  <span class="btn_more">더 보기</span>
+                </a>
+              </div>
+              <div class="fr tblType1">
+                <table summary="">
+                  <caption></caption>
+                  <colgroup>
+                    <col width="30%" />
+                    <col width="70%" />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th>· 출처</th>
+                      <td><a href="https://www.kisti.re.kr/" target="_blank" title="과학기술정보원 바로가기">과학기술정보원</a></td>
+                    </tr>
+                    <tr>
+                      <th>· 수집주기</th>
+                      <td>일별</td>
+                    </tr>
+                    <tr>
+                      <th>· 수집기간</th>
+                      <td>2011.01.01 ~ 2019.10.31</td>
+                    </tr>
+                    <tr>
+                      <th>· 형식</th>
+                      <td>CSV</td>
+                    </tr>
+                    <tr>
+                      <th>· 사이즈</th>
+                      <td>1.3 GB</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="bottom">
+              <div class="keyword_wrap">
+                <table summary="">
+                  <caption></caption>
+                  <colgroup>
+                    <col width="10%" />
+                    <col width="60%" />
+                    <col width="30%" />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th>관련 키워드</th>
+                      <td>
+                        <span class="tag_key">#미세먼지</span>
+                        <span class="tag_key">#미세먼지</span>
+                      </td>
+                      <td class="ta-r">
+                        <button type="button" class="btn_wish"><span>찜하기</span></button>
+                        <button type="button" class="btn_download"><span>다운로드</span></button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- tab2: News -->
+      <div id="tabNews" class="tab_contents">
+        <p class="txt_result">
+          총 <span class="num">15</span> 건의 결과가 검색되었습니다.
+          <button type="button" class="btn_resultDown">
+            <span><span class="color_purple">검색 결과 전체</span> 다운로드</span>
+          </button>
+        </p>
+        <div class="row_group">
+          <!-- 주제어 분석 결과 -->
+          <div class="row">
+            <div class="row_tit">
+              <p> 
+                <span class="tit">주제어 분석 결과</span>
+                검색어를 포함하는 전체 뉴스기사에서 일자별로 중요한 주제어의 목록을 상위 100개까지 제공하는 분석결과 입니다.
+              </p>
+              <span class="btn_more">더 보기</span>
+            </div>
+            <div class="row_cont">
+              <div class="keyword_wrap">
+                <table summary="">
+                  <caption></caption>
+                  <colgroup>
+                    <col width="10%" />
+                    <col width="90%" />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th>분석 결과 키워드</th>
+                      <td>
+                        <span class="tag_key">#아침 고기압 영향</span>
+                        <span class="tag_key">#전국 번개동반</span>
+                        <span class="tag_key">#전국 항해 조업</span>
+                        <span class="tag_key">#비 저기압 영향</span>
+                        <span class="tag_key">#태풍 헥토파스칼</span>
+                        <span class="tag_key">#태풍 강풍동반</span>
+                        <span class="tag_key">#태풍 중심 기압 헥토파스칼</span>
+                        <span class="tag_key">#태풍 세력유지</span>
+                        <span class="tag_key">#아침 고기압 영향</span>
+                        <span class="tag_key">#전국 번개동반</span>
+                        <span class="tag_key">#전국 항해 조업</span>
+                        <span class="tag_key">#비 저기압 영향</span>
+                        <span class="tag_key">#태풍 헥토파스칼</span>
+                        <span class="tag_key">#태풍 강풍동반</span>
+                        <span class="tag_key">#태풍 중심 기압 헥토파스칼</span>
+                        <span class="tag_key">#태풍 세력유지</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- //주제어 분석 결과 -->
+          <!-- 관련 키워드 분석 결과 -->
+          <div class="row">
+            <div class="row_tit">
+              <p> 
+                <span class="tit">관련 키워드 분석 결과</span>
+                검색어를 포함하는 전체 뉴스기사에서 일자별로 입력한 키워드와 연관성이 높은 단어를 상위 100개까지 제공하는 분석결과 입니다.
+              </p>
+              <span class="btn_more">더 보기</span>
+            </div>
+            <div class="row_cont">
+              <div class="keyword_wrap">
+                <table summary="">
+                  <caption></caption>
+                  <colgroup>
+                    <col width="10%" />
+                    <col width="90%" />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th>분석 결과 키워드</th>
+                      <td>
+                        <span class="tag_key">#아침 고기압 영향</span>
+                        <span class="tag_key">#전국 번개동반</span>
+                        <span class="tag_key">#전국 항해 조업</span>
+                        <span class="tag_key">#비 저기압 영향</span>
+                        <span class="tag_key">#태풍 헥토파스칼</span>
+                        <span class="tag_key">#태풍 강풍동반</span>
+                        <span class="tag_key">#태풍 중심 기압 헥토파스칼</span>
+                        <span class="tag_key">#태풍 세력유지</span>
+                        <span class="tag_key">#아침 고기압 영향</span>
+                        <span class="tag_key">#전국 번개동반</span>
+                        <span class="tag_key">#전국 항해 조업</span>
+                        <span class="tag_key">#비 저기압 영향</span>
+                        <span class="tag_key">#태풍 헥토파스칼</span>
+                        <span class="tag_key">#태풍 강풍동반</span>
+                        <span class="tag_key">#태풍 중심 기압 헥토파스칼</span>
+                        <span class="tag_key">#태풍 세력유지</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- //관련 키워드 분석 결과 -->
+          <!-- 문서 변화량 분석 결과 -->
+          <div class="row">
+            <div class="row_tit">
+              <p> 
+                <span class="tit">문서 변화량 분석 결과</span>
+                검색어를 포함하는 전체 뉴스기사 수를 일자별로 제공하는  분석결과 입니다.
+              </p>
+              <span class="btn_more">더 보기</span>
+            </div>
+            <div class="row_cont">
+              <ul class="lst_doc">
+                <li>
+                  <span class="txt_average">일 평균</span>
+                  <span class="txt_count">13</span>
+                  <span class="txt_unit">건</span>
+                </li>
+                <li>
+                  <span class="txt_average">주 평균</span>
+                  <span class="txt_count">1,123</span>
+                  <span class="txt_unit">건</span>
+                </li>
+                <li>
+                  <span class="txt_average">월 평균</span>
+                  <span class="txt_count">2,34</span>
+                  <span class="txt_unit">건</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- //문서 변화량 분석 결과 -->
+          <!-- 원문 분석 결과 -->
+          <div class="row">
+            <div class="row_tit">
+              <p> 
+                <span class="tit">원문 분석 결과</span>
+                검색어를 포함하는 전체 뉴스기사에 대해 개체명 분석, 형태소 분석 등의 텍스트 분석결과를 제공합니다.
+              </p>
+              <span class="btn_more">더 보기</span>
+            </div>
+            <div class="row_cont">
+              <div class="txtAnalysis_wrap">
+                <div class="tooltip_wrap">
+                  <span class="txt_tooltip">개체명 분포</span>
+                  <div class="tooltip_box">
+                    <span class="btn_close"><span class="hide">닫기</span></span>
+                    <p class="tit">개체명 분포란</p>
+                    <p class="cont">개체명 분포란 무슨 말인지 도움말이 작성 됩니다.</p>
+                  </div>
+                </div>
+                <ul class="lst_txtAnalysis">
+                  <li>
+                    <a href="#">
+                      <span class="tit">
+                        <span class="txt_tit">지역</span>
+                        <span class="txt_count">1,124건</span>
+                      </span>
+                      <span class="cont">
+                        남극해, 동해, 북극해, 태평양, 산호해, 도쿄만, 라몬만, 변산반도, 라우산, 태백산맥, 지령산맥, 박달, 섬진강, 한강, 제주도, 경기도, 충청도, 강원도, 전라도, 경상도, 텍사스주, 서울, 동경, 북경, 베이징, 런던, 워싱턴, 강릉, 요코하마, 덴버, 뉴욕, 섬진강, 충주호, 관곡지, 나이아가라 폭포, 고속버스터미널, 인천국제공항, 서울역, 김해공항, 김포공항, 부산역, 울산
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="tit">
+                        <span class="txt_tit">기관</span>
+                        <span class="txt_count">941건</span>
+                      </span>
+                      <span class="cont">
+                        경제인문사회연구회, 과학기술정책연구원, 국토연구원, 대외경제정책연구원, 산업연구원, 에너지경제연구원, 정보통신정책연구원, 통일연구원, 한국개발연구원, 한국교육개발원, 한국교육과정평가원, 한국교통연구원, 한국노동연구원, 한국농촌경제연구원, 한국법제연구원, 한국보건사회연구원, 한국여성정책연구원, 한국조세재정연구원, 한국직업능력개발원, 한국청소년정책연구원, 한국해양수산개발원, 한국행정연구원, 한국형사정책연구원, 한국환경정책평가연구원
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="tit">
+                        <span class="txt_tit">인명</span>
+                        <span class="txt_count">11건</span>
+                      </span>
+                      <span class="cont">
+                        안혜경, 권오봉, 노은지, 김하윤, 장성규, 안정환, 이혜원, 김기영, 이수근, 반기성, 김학용
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="tit">
+                        <span class="txt_tit">직급</span>
+                        <span class="txt_count">7건</span>
+                      </span>
+                      <span class="cont">
+                        사원, 대리, 과장, 차장, 부장, 상무, 이사
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="tit">
+                        <span class="txt_tit">소속</span>
+                        <span class="txt_count">1건</span>
+                      </span>
+                      <span class="cont">
+                        데이타솔루션
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="tit">
+                        <span class="txt_tit">전화번호</span>
+                        <span class="txt_count">2건</span>
+                      </span>
+                      <span class="cont">
+                        02-123-1234, 02-345-2345
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="tit">
+                        <span class="txt_tit">이벤트</span>
+                        <span class="txt_count">1,134건</span>
+                      </span>
+                      <span class="cont">
+                        남극해, 동해, 북극해, 태평양, 산호해, 도쿄만, 라몬만, 변산반도, 라우산, 태백산맥, 지령산맥, 박달, 섬진강, 한강, 제주도, 경기도, 충청도, 강원도, 전라도, 경상도, 텍사스주, 서울, 동경, 북경, 베이징, 런던, 워싱턴, 강릉, 요코하마, 덴버, 뉴욕, 섬진강, 충주호, 관곡지, 나이아가라 폭포, 고속버스터미널, 인천국제공항, 서울역, 김해공항, 김포공항, 부산역, 울산
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="tit">
+                        <span class="txt_tit">날짜</span>
+                        <span class="txt_count">1,134건</span>
+                      </span>
+                      <span class="cont">
+                        남극해, 동해, 북극해, 태평양, 산호해, 도쿄만, 라몬만, 변산반도, 라우산, 태백산맥, 지령산맥, 박달, 섬진강, 한강, 제주도, 경기도, 충청도, 강원도, 전라도, 경상도, 텍사스주, 서울, 동경, 북경, 베이징, 런던, 워싱턴, 강릉, 요코하마, 덴버, 뉴욕, 섬진강, 충주호, 관곡지, 나이아가라 폭포, 고속버스터미널, 인천국제공항, 서울역, 김해공항, 김포공항, 부산역, 울산
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="tit">
+                        <span class="txt_tit">조회수</span>
+                        <span class="txt_count">1,134건</span>
+                      </span>
+                      <span class="cont">
+                        남극해, 동해, 북극해, 태평양, 산호해, 도쿄만, 라몬만, 변산반도, 라우산, 태백산맥, 지령산맥, 박달, 섬진강, 한강, 제주도, 경기도, 충청도, 강원도, 전라도, 경상도, 텍사스주, 서울, 동경, 북경, 베이징, 런던, 워싱턴, 강릉, 요코하마, 덴버, 뉴욕, 섬진강, 충주호, 관곡지, 나이아가라 폭포, 고속버스터미널, 인천국제공항, 서울역, 김해공항, 김포공항, 부산역, 울산
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="tit">
+                        <span class="txt_tit">제품</span>
+                        <span class="txt_count">1,134건</span>
+                      </span>
+                      <span class="cont">
+                        남극해, 동해, 북극해, 태평양, 산호해, 도쿄만, 라몬만, 변산반도, 라우산, 태백산맥, 지령산맥, 박달, 섬진강, 한강, 제주도, 경기도, 충청도, 강원도, 전라도, 경상도, 텍사스주, 서울, 동경, 북경, 베이징, 런던, 워싱턴, 강릉, 요코하마, 덴버, 뉴욕, 섬진강, 충주호, 관곡지, 나이아가라 폭포, 고속버스터미널, 인천국제공항, 서울역, 김해공항, 김포공항, 부산역, 울산
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="tit">
+                        <span class="txt_tit">품목</span>
+                        <span class="txt_count">1,134건</span>
+                      </span>
+                      <span class="cont">
+                        남극해, 동해, 북극해, 태평양, 산호해, 도쿄만, 라몬만, 변산반도, 라우산, 태백산맥, 지령산맥, 박달, 섬진강, 한강, 제주도, 경기도, 충청도, 강원도, 전라도, 경상도, 텍사스주, 서울, 동경, 북경, 베이징, 런던, 워싱턴, 강릉, 요코하마, 덴버, 뉴욕, 섬진강, 충주호, 관곡지, 나이아가라 폭포, 고속버스터미널, 인천국제공항, 서울역, 김해공항, 김포공항, 부산역, 울산
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="tit">
+                        <span class="txt_tit">양태</span>
+                        <span class="txt_count">1,134건</span>
+                      </span>
+                      <span class="cont">
+                        남극해, 동해, 북극해, 태평양, 산호해, 도쿄만, 라몬만, 변산반도, 라우산, 태백산맥, 지령산맥, 박달, 섬진강, 한강, 제주도, 경기도, 충청도, 강원도, 전라도, 경상도, 텍사스주, 서울, 동경, 북경, 베이징, 런던, 워싱턴, 강릉, 요코하마, 덴버, 뉴욕, 섬진강, 충주호, 관곡지, 나이아가라 폭포, 고속버스터미널, 인천국제공항, 서울역, 김해공항, 김포공항, 부산역, 울산
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+                <div class="tooltip_wrap">
+                  <span class="txt_tooltip">품사 분포</span>
+                  <div class="tooltip_box">
+                    <span class="btn_close"><span class="hide">닫기</span></span>
+                    <p class="tit">품사 분포란</p>
+                    <p class="cont">
+                      품사 분포란 무슨 말인지 도움말이 작성 됩니다.품사 분포란 무슨 말인지 도움말이 작성 됩니다.품사 분포란 무슨 말인지 도움말이 작성 됩니다.품사 분포란 무슨 말인지 도움말이 작성 됩니다.
+                    </p>
+                  </div>
+                </div>
+                <ul class="lst_txtAnalysis">
+                  <li>
+                    <a href="#">
+                      <span class="tit">
+                        <span class="txt_tit">명사</span>
+                        <span class="txt_count">1,134건</span>
+                      </span>
+                      <span class="cont">
+                        남극해, 동해, 북극해, 태평양, 산호해, 도쿄만, 라몬만, 변산반도, 라우산, 태백산맥, 지령산맥, 박달, 섬진강, 한강, 제주도, 경기도, 충청도, 강원도, 전라도, 경상도, 텍사스주, 서울, 동경, 북경, 베이징, 런던, 워싱턴, 강릉, 요코하마, 덴버, 뉴욕, 섬진강, 충주호, 관곡지, 나이아가라 폭포, 고속버스터미널, 인천국제공항, 서울역, 김해공항, 김포공항, 부산역, 울산
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="tit">
+                        <span class="txt_tit">동사</span>
+                        <span class="txt_count">1,134건</span>
+                      </span>
+                      <span class="cont">
+                        남극해, 동해, 북극해, 태평양, 산호해, 도쿄만, 라몬만, 변산반도, 라우산, 태백산맥, 지령산맥, 박달, 섬진강, 한강, 제주도, 경기도, 충청도, 강원도, 전라도, 경상도, 텍사스주, 서울, 동경, 북경, 베이징, 런던, 워싱턴, 강릉, 요코하마, 덴버, 뉴욕, 섬진강, 충주호, 관곡지, 나이아가라 폭포, 고속버스터미널, 인천국제공항, 서울역, 김해공항, 김포공항, 부산역, 울산
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="tit">
+                        <span class="txt_tit">조사</span>
+                        <span class="txt_count">14건</span>
+                      </span>
+                      <span class="cont">
+                        남극해, 동해, 북극해, 태평양, 산호해, 도쿄만, 라몬만, 변산반도, 라우산, 태백산맥, 지령산맥, 박달, 섬진강, 한강, 제주도, 경기도, 충청도, 강원도, 전라도, 경상도, 텍사스주, 서울, 동경, 북경, 베이징, 런던, 워싱턴, 강릉, 요코하마, 덴버, 뉴욕, 섬진강, 충주호, 관곡지, 나이아가라 폭포, 고속버스터미널, 인천국제공항, 서울역, 김해공항, 김포공항, 부산역, 울산
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- //원문 분석 결과 -->
+        </div>
+      </div>
+      <!-- //탭 컨텐츠 -->
+    </div>
+    <!-- //서브 컨텐츠 -->
+  </div>
+  <!-- //container -->
+  <!-- footer -->
+  <div id="footer">
+    <div class="inr clear">
+      <div class="logo"><a href="#"><span class="hide">데이터스테이션</span></a></div>
+      <div class="fr">
+        <ul class="info">
+          <li><a href="#">사이트맵</a></li>
+          <li><a href="#">이용약관</a></li>
+          <li><a href="#">개인정보취급방침</a></li>
+          <li><a href="#">표준내부정보관리규정</a></li>
+        </ul>
+        <p class="copyright">2019 DATASTATION. All Right Reserved.</p>
+        <ul class="sns">
+          <li><a href="#" class="facebook"><span class="hide">페이스북</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- //footer -->
+  <ul id="sidebar">
+    <li><span class="btn_data js-open" data-pop="popupData"><span class="hidden">데이터 상품요청</span></span>
+    </li>
+    <li><span class="btn_top"><span class="hide">상단으로 가기</span></span>
+    </li>
+  </ul>
+</div>
+<!-- //wrap -->
+<!-- 데이터 상품 요청 -->
+<div id="popupData" class="popType1 data hidden">
+  <div class="pop_head">
+    <span class="tit">데이터 상품 요청</span>
+    <span class="js-close"><span class="hide">닫기</span></span>
+  </div>
+  <div class="pop_body">
+    <div class="form_wrap type2">
+      <p class="tit">희망사항 작성</p>
+      <input type="text" name="" class="ins_form" placeholder="예) 전세, 매매 및 시세 관련 자료가 있었으면 좋겠습니다!">
+      <p class="tit">희망 수집기간</p>
+      <input type="text" name="" class="ins_form" placeholder="예) 2012년 ~ 2019년 까지">
+      <p class="tit">희망 수집 주기</p>
+      <select class="ins_form">
+        <option>월별</option>
+        <option>일별</option>
+      </select>
+      <div class="btn_wrap">
+        <a href="#" class="btn_popup purple">요청하기</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- //데이터 상품 요청 -->
+<div class="dimm transparent"></div>
+</body>
+</html>
